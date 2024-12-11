@@ -1,0 +1,226 @@
+#contenidor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.imatge {
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+img, svg {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: auto;
+}
+
+.imatge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 5% 0;
+}
+
+hr {
+    width: 100%;
+    border: 2px solid #2c3e50;
+    margin: 2% 0;
+}
+
+/* Exercici 1 */
+@keyframes botar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes desapareixerApareixer {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+#svg1 #path4 {
+    animation: botar 3s;
+    animation-delay: 2s;
+}
+
+#svg1 #path5 {
+    animation: desapareixerApareixer 5s 1;
+}
+
+/* Exercici 2 */
+@keyframes apareixer {
+    0%, 99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#svg2 #path3, #svg2 #path4, 
+#svg2 #path5, #svg2 #path6, 
+#svg2 #path7, #svg2 #path8 {
+    animation: apareixer 3s 1;
+    transform-origin: center;;
+}
+
+@keyframes escalar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+#svg2 #path2, #svg2 #path12, #svg2 #path10,
+#svg2 #path10-0, #svg2 #path12-9,
+#svg2 #path12-9-2, #svg2 #path10-0-4,
+#svg2 #path10-5, #svg2 #path12-8,
+#svg2 #path12-1, #svg2 #path10-50,
+#svg2 #path10-0-8, #svg2 #path12-9-26,
+#svg2 #path12-9-2-2, #svg2 #path10-0-4-6,
+#svg2 #path10-5-0, #svg2 #path12-8-8 {
+    animation: escalar 3s 1;
+    transform-origin: center;
+}
+
+/* Exercici 3 */
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#svg3 {
+    animation: girar 5s infinite;
+}
+
+#svg3:hover {
+    animation-play-state: paused;
+}
+
+/* Exercici 4 */
+@keyframes canviColor1 {
+    0% {
+        fill: #fa3913;
+    }
+    25% {
+        fill: #38b137;
+    }
+    50% {
+        fill: #fcbd06;
+    }
+    75% {
+        fill: #3780ff;
+    }
+    100% {
+        fill: #fa3913;
+    }
+}
+
+@keyframes canviColor2 {
+    0% {
+        fill: #3780ff;
+    }
+    25% {
+        fill: #fa3913;
+    }
+    50% {
+        fill: #38b137;
+    }
+    75% {
+        fill: #fcbd06;
+    }
+    100% {
+        fill: #3780ff;
+    }
+}
+
+@keyframes canviColor3 {
+    0% {
+        fill: #38b137;
+    }
+    25% {
+        fill: #fcbd06;
+    }
+    50% {
+        fill: #3780ff;
+    }
+    75% {
+        fill: #fa3913;
+    }
+    100% {
+        fill: #38b137;
+    }
+}
+
+@keyframes canviColor4 {
+    0% {
+        fill: #fcbd06;
+    }
+    25% {
+        fill: #3780ff;
+    }
+    50% {
+        fill: #fa3913;
+    }
+    75% {
+        fill: #38b137;
+    }
+    100% {
+        fill: #fcbd06;
+    }
+}
+
+#svg4:hover #path1, #svg4:hover #path4,
+#svg4:hover #path3, #svg4:hover #path7,
+#svg4:hover #path3-9, #svg4:hover #path6 {
+    animation: none;
+}
+
+#svg4 #path1, #svg4 #path4 {
+    animation: canviColor2 4s infinite;
+}
+
+#svg4 #path3, #svg4 #path7 {
+    animation: canviColor1 4s infinite;
+}
+
+#svg4 #path3-9 {
+    animation: canviColor4 4s infinite;
+}
+
+#svg4 #path6 {
+    animation: canviColor3 4s infinite;
+}
